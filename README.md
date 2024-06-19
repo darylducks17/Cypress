@@ -29,12 +29,40 @@ Learning Cypress for Web App Automation.
 - Reading/writing data into file is difficult. 
 - Third party reporting tool integration is limited.
   
-## Envrionment Setup - identical for Windows and Mac
+## Environment Setup - identical for Windows and Mac
 1. Download and install Node.js, Visual Studio Code (VSCode)
 2. Create a new folder for the project and open it in VSCode
 3. Open CMD/Terminal and then exectue the following command which creates the package.json file (list of apps for the for it to run):
-    ``` npm -i init```
+    ```npm -i init```
 4. To install Cypress, use the following command: 
    ```npm install cypress --save -dev```
-5. To start the Cypress launch pad, use: 
+5. To start the Cypress application, use: 
    ```npx cypress open``` or ```node_modules/.bin/cypress open```
+
+## Writing Tests
+- Cypress uses Mocha framework to write the test scripts.
+
+```
+describe('TestSuiteName', () => {
+
+    it('Does not do much!, () => {
+        expect(true).to.equal(true)
+    })
+})
+```
+
+- ```describe``` is a keyword and can multiple ```it``` blocks
+- ```('TestSuiteName'``` is the name of the test suite
+- ```() =>``` represents the function which can be also written like ```function ()```
+- ```('Does not do much!``` is the test case
+- One spec file can have multiple number of test suites/```describe``` block and every ```describe``` block can have multiple ```it``` block.
+- ```cy``` is the root module/package where one can access all the commands from Cypress.
+- Assertions are the validations that are executed in the middle or end of the test cases to evaluate that the actual result is as expected.
+
+## Executing Tests
+- ```npx cypress open``` - opens the Cypress application where you can run the spec files.
+- ```npx cypress run``` - terminal/cmd command to run all the spec files without launching the Cypress application (headless mode).
+- ```npx cypress run --headed``` - terminal/cmd command to run all spec files directly on the browser
+- ```npx cypress run --spec pathtofile.cy.js``` - terminal/cmd command to run the specific spec file (headless mode by default)
+- ```npx cypress run --browser chrome``` - terminal/cmd command to run all the spec files (headless mode by default)
+  
