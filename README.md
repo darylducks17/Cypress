@@ -58,6 +58,8 @@ describe('TestSuiteName', () => {
 - One spec file can have multiple number of test suites/```describe``` block and every ```describe``` block can have multiple ```it``` block.
 - ```cy``` is the root module/package where one can access all the commands from Cypress.
 - Assertions are the validations that are executed in the middle or end of the test cases to evaluate that the actual result is as expected.
+  - ```cy.get('locator').contains('value')``` get the DOM element containing the text
+  - ```cy.get('locator').should('value')``` creates an assertion
 
 ## Executing Tests
 - ```npx cypress open``` - opens the Cypress application where you can run the spec files.
@@ -65,4 +67,16 @@ describe('TestSuiteName', () => {
 - ```npx cypress run --headed``` - terminal/cmd command to run all spec files directly on the browser
 - ```npx cypress run --spec pathtofile.cy.js``` - terminal/cmd command to run the specific spec file (headless mode by default)
 - ```npx cypress run --browser chrome``` - terminal/cmd command to run all the spec files (headless mode by default)
+  
+## Locators
+- CSS Selectors - supported by Cypress
+  - four types of supported CSS Selectors
+    - #id 
+    - .class
+    - [attribute='value']
+    - .class [attribute='value']
+- XPath - need to install additional plugins
+- ```cy.get('locator')```  method will locate the element 
+- ```cy.get('locator').type('value')``` this will go to the locator and type in the value provided
+- xpath plugin has been deprecated 
   
