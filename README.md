@@ -57,9 +57,6 @@ describe('TestSuiteName', () => {
 - ```('Does not do much!``` is the test case
 - One spec file can have multiple number of test suites/```describe``` block and every ```describe``` block can have multiple ```it``` block.
 - ```cy``` is the root module/package where one can access all the commands from Cypress.
-- Assertions are the validations that are executed in the middle or end of the test cases to evaluate that the actual result is as expected.
-  - ```cy.get('locator').contains('value')``` get the DOM element containing the text
-  - ```cy.get('locator').should('value')``` creates an assertion
 
 ## Executing Tests
 - ```npx cypress open``` - opens the Cypress application where you can run the spec files.
@@ -78,5 +75,29 @@ describe('TestSuiteName', () => {
 - XPath - need to install additional plugins
 - ```cy.get('locator')```  method will locate the element 
 - ```cy.get('locator').type('value')``` this will go to the locator and type in the value provided
+- ```cy.get('locator').contains('value')``` get the DOM element containing the text
 - xpath plugin has been deprecated 
-  
+- able to use Cypress TestRunner to capture the locators
+
+## Assertions
+- Assertions are the validations that are executed in the middle or end of the test cases to evaluate that the actual result is as expected.
+- In Cypress there are two types of assertions: 
+  - Implicit 
+    - If an assertion is applicable to the object obtained from the parent command in a chain, it is known as the implicit assertion
+    - These commands cannot be used as standalone. Generally, they are used when we have to verify multiple checks on a particular object.
+    - ```cy.get('locator').should('value')``` & ```cy.get('locator').should('value').and('value')``` are the popular implicit assertions
+    - These are the [keywords](https://docs.cypress.io/guides/references/assertions) you may want to include when doing assertions:
+      - eq, contain, include, exist, have.length, have.value -> also have the negative equivalent
+  - Explicit
+    - If an assertion is applicable to an object directly, it is known as the explicit assertion.
+    -  ```cy.get('locator').assert('value')``` (TDD approch) & ```cy.get('locator').expect('value')``` (BDD approach) are the popular explicit assertions
+ -  Default 
+    - Handled internally and do not require to be invoked specifically.
+    - ```cy.visit ()``` − expects the page to show the content with 200 status code
+    - ```cy.request ()``` − expects the remote server to be available and sends a response.
+    - ```cy.contains ()``` − expects the web element with its properties to be available in DOM.
+    - ```cy.get()``` −expects the web element to be available in DOM.
+    - ```cy.find ()``` − expects the web element to be available in DOM.
+    - ```cy.type ()``` − expects the web element to turn to a type able state.
+    - ```cy.click ()``` − expects the web element to turn to a clickable state.
+    - ```cy.its ()``` − expects for a web element property on the existing subject.
