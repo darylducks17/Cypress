@@ -101,3 +101,17 @@ describe('TestSuiteName', () => {
     - ```cy.type ()``` − expects the web element to turn to a type able state.
     - ```cy.click ()``` − expects the web element to turn to a clickable state.
     - ```cy.its ()``` − expects for a web element property on the existing subject.
+
+## Folder Structure
+- **downloads** - all downloaded files are stored here
+- **e2e** - store all spec/test case files
+- **fixures** - maintain static test data here
+- **screenshots** - stores captured ** through automation
+- **support** - contains all the reusable scripts
+  - commands.js - store/create custom commands and override the current commands
+  - e2e.js - code that loads before executing the spec files
+- **videos**
+  - recorded videos of the test cases are stored here
+- **node_modules** - contains all cypress related modules
+- **cypress.config.js** - cypress config file
+- **package.json** - contains the dependencies
