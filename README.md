@@ -115,3 +115,8 @@ describe('TestSuiteName', () => {
 - **node_modules** - contains all cypress related modules
 - **cypress.config.js** - cypress config file
 - **package.json** - contains the dependencies
+
+## Interacting with Elements
+- checking and unchecking radio buttons/checkboxes
+  - ```.check()``` & ```.uncheck()```
+- Cypress has only ```.get()``` method to get either single or multiple elements
