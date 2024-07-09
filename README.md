@@ -121,3 +121,4 @@ describe('TestSuiteName', () => {
   - ```.check()``` & ```.uncheck()```
 - Cypress has only ```.get()``` method to get either single or multiple elements
 - ```have.value``` assertion only works when dropdowns have the selector tag in the DOM. Use ```have.text``` instead.
+- Cypress automatically closes JS alert windows by clicking the 'OK' button. Need to write code to automate to click the 'Cancel' button.
