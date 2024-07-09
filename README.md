@@ -120,3 +120,4 @@ describe('TestSuiteName', () => {
 - checking and unchecking radio buttons/checkboxes
   - ```.check()``` & ```.uncheck()```
 - Cypress has only ```.get()``` method to get either single or multiple elements
+- ```have.value``` assertion only works when dropdowns have the selector tag in the DOM. Use ```have.text``` instead.
