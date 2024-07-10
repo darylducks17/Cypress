@@ -122,3 +122,6 @@ describe('TestSuiteName', () => {
 - Cypress has only ```.get()``` method to get either single or multiple elements
 - ```have.value``` assertion only works when dropdowns have the selector tag in the DOM. Use ```have.text``` instead.
 - Cypress automatically closes JS alert windows by clicking the 'OK' button. Need to write code to automate to click the 'Cancel' button.
+- Cypress cannot directly shift to a new tab and perform operations there. There are certain workarounds to combat this issue.
+  1. Clicking on the link and removing the target attribute to open the child tab on the same page.
+  2. jQuery function to capture the href of new tab and save it in a variable - One limitation is that the domain should be the same or the function will not function
