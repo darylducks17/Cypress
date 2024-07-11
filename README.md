@@ -125,3 +125,29 @@ describe('TestSuiteName', () => {
 - Cypress cannot directly shift to a new tab and perform operations there. There are certain workarounds to combat this issue.
   1. Clicking on the link and removing the target attribute to open the child tab on the same page.
   2. jQuery function to capture the href of new tab and save it in a variable - One limitation is that the domain should be the same or the function will not function
+- Cypress cannot handle iframes content if there are cross-origin restriction in place. It is security mechanism implemented by web browsers to prevent malicious behavior and protect user data. 
+
+  The following property must be set in ```cypress.config.js``` file to access cross origin policy iframes.
+
+```
+const {defineConfig} = require('cypress');
+module.exports = defineConfig ({
+  chromeWebSecurity: false,
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+  },
+})
+```
+or 
+```
+module.exports = {
+  e2e: {
+    chromeWebSecurity:false,
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+  },
+};
+```

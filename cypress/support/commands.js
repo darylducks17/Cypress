@@ -25,3 +25,14 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 // 
 /// <reference types="Cypress"/>
+
+Cypress.Commands.add('getIFrame', (iframeSelector, callback)=>{
+    cy.get(iframeSelector).then(($iframe) => {
+        //get the iframe's document body
+        const $body = $iframe.contents().find('body')
+        //ensure the body is loaded
+        cy.wrap($body).should('not.be.empty').within(()=>{
+            callback(cy)
+        })
+    })
+})
