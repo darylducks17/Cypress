@@ -23,7 +23,7 @@ describe('check UI elements', () => {
         cy.get('input.form-check-input[type="checkbox"]').uncheck().should('be.checked')
         //select the first & last checkbox among many
         cy.get('input.form-check-input[type="checkbox"]').first().check().should('be.checked')
-        cy.get('input.form-check-input[type="checkbox"]').last().check().shoulc('be.checked')
+        cy.get('input.form-check-input[type="checkbox"]').last().check().should('be.checked')
         
     })  
     
