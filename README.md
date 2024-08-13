@@ -117,7 +117,7 @@ describe('TestSuiteName', () => {
 - **package.json** - contains the dependencies
 
 ## Interacting with Elements
-- checking and unchecking radio buttons/checkboxes
+- Checking and unchecking radio buttons/checkboxes
   - ```.check()``` & ```.uncheck()```
 - Cypress has only ```.get()``` method to get either single or multiple elements
 - ```have.value``` assertion only works when dropdowns have the selector tag in the DOM. Use ```have.text``` instead.
@@ -127,7 +127,7 @@ describe('TestSuiteName', () => {
   2. jQuery function to capture the href of new tab and save it in a variable - One limitation is that the domain should be the same or the function will not function
 - Cypress cannot handle iframes content if there are cross-origin restriction in place. It is security mechanism implemented by web browsers to prevent malicious behavior and protect user data. 
 
-  The following property must be set in ```cypress.config.js``` file to access cross origin policy iframes.
+  - The following property must be set in ```cypress.config.js``` file to access cross origin policy iframes.
 
 ```
 const {defineConfig} = require('cypress');
@@ -160,3 +160,6 @@ module.exports = {
 - Tags
   - ```skip``` - it block skipped during test run
   - ```only``` - runs only the specific it block
+- Fixtures 
+  - files that contain test data which we can parametrise the tests
+  - can use various formats e.g. JSON, TXT, CSV, HTML
