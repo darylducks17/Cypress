@@ -151,3 +151,12 @@ module.exports = {
   },
 };
 ```
+- Hooks used to specify some prerequisite scripts before executing the tests.
+- They are derived from mocha framework
+  - ```before``` - execute before starting all the it blocks
+  - ```after``` - only once after all the it block; can write anywhere as order is not important
+  - ```beforeEach``` - multiple times before every it block
+  - ```afterEach``` - multiple time after every it block
+- Tags
+  - ```skip``` - it block skipped during test run
+  - ```only``` - runs only the specific it block
